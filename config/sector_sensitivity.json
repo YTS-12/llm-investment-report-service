@@ -1,0 +1,35 @@
+{
+  "_meta": {
+    "description": "업종별 거시 민감도 점수 (근거 기반). 각 값은 해당 요인이 '강화'될 때 업종에 미치는 영향. + 유리 / - 불리, 범위 -2~+2.",
+    "factor_semantics": {
+      "rate": "금리 인상에 대한 반응 (은행+, 성장주/유틸리티-)",
+      "fx": "원화 약세에 대한 반응 (수출주+, 내수/철강-)",
+      "growth": "경기 회복에 대한 반응 (경기민감+, 방어주 0)",
+      "inflation": "인플레이션(물가 상승)에 대한 반응 (에너지/소재+, 석유화학-). 2차 요인 → ±1로 제한"
+    },
+    "confidence_legend": "korean_empirical=한국 실증 / korean_qualitative=한국 시장근거로 방향 확인(정량 베타 미확보) / global_framework=글로벌 프레임 / weak_inferred=근거 약함(추론)",
+    "sources": [
+      "Kim et al., KRX 1,352사 패널 1997-2015 (업종별 환율 노출)",
+      "Jung & Kim 2011 (유가 상승 → 대부분 업종 단기 음, 화학=납사 원가)",
+      "Lee & Kim 2013 / FDIC (은행 NIM-금리, 스프레드 조건부)",
+      "Fidelity / MSCI 1975-2023 (경기민감-방어, 금리·물가 섹터 민감도)"
+    ],
+    "design_notes": "환율은 정적 부호+modest 강도(위기 국면 부호 반전 미반영). 근거가 mixed/약한 셀은 0 또는 ±1로 보수적. 물가는 2차 요인이라 ±1 제한."
+  },
+  "default": {"rate": 0, "fx": 0, "growth": 0, "inflation": 0, "confidence": "weak_inferred", "note": "미정의 업종 → 중립"},
+  "sectors": {
+    "반도체":     {"rate": 1,  "fx": 2,  "growth": 2, "inflation": 0,  "confidence": "korean_empirical", "note": "수출 FX+ · 경기민감 강함; 금리는 혼재(약)"},
+    "자동차":     {"rate": 0,  "fx": 2,  "growth": 2, "inflation": 0,  "confidence": "korean_empirical", "note": "수출 FX+ (구체 EPS 수치 근거는 검증서 기각)"},
+    "은행":       {"rate": 2,  "fx": 0,  "growth": 1, "inflation": 0,  "confidence": "korean_empirical", "note": "NIM↑→주가↑, 단 예대 스프레드 조건부"},
+    "유통":       {"rate": -1, "fx": -1, "growth": 1, "inflation": -1, "confidence": "korean_empirical", "note": "내수 FX- · 마진압박"},
+    "건설":       {"rate": -2, "fx": 0,  "growth": 1, "inflation": -1, "confidence": "weak_inferred",    "note": "금리 부담 큼 (한국 직접 베타 미확보)"},
+    "철강":       {"rate": 1,  "fx": -1, "growth": 2, "inflation": 1,  "confidence": "korean_empirical", "note": "원화 강세 수혜(수출주와 반대 부호) · 소재 인플레+"},
+    "화학":       {"rate": 1,  "fx": 0,  "growth": 2, "inflation": -1, "confidence": "korean_empirical", "note": "석유화학: 유가↑ 단기 음(납사 원가)"},
+    "조선":       {"rate": 0,  "fx": 2,  "growth": 2, "inflation": 0,  "confidence": "korean_empirical", "note": "수출 FX+"},
+    "정유":       {"rate": 1,  "fx": -1, "growth": 1, "inflation": 1,  "confidence": "global_framework", "note": "에너지 인플레+ · 원유 USD 수입"},
+    "제약바이오": {"rate": -1, "fx": 0,  "growth": 0, "inflation": 0,  "confidence": "korean_qualitative", "note": "금리-(파이프라인 듀레이션, 2026 금리인하 기대약화시 제약지수 하락으로 재확인) · 경기 민감도 낮음(치료제 포트폴리오, 실적/FDA 구동); 정량 베타 미확보→크기 보수적"},
+    "유틸리티":   {"rate": -2, "fx": -1, "growth": 0, "inflation": 0,  "confidence": "global_framework", "note": "금리 음 가장 강함(bond-proxy)"},
+    "통신":       {"rate": -1, "fx": 0,  "growth": 0, "inflation": 0,  "confidence": "global_framework", "note": "방어주 저베타"},
+    "2차전지":    {"rate": -1, "fx": 1,  "growth": 1, "inflation": 0,  "confidence": "korean_qualitative", "note": "KOSDAQ 성장주 금리-·성장+ 확인(듀레이션, 금리 안정시 코스닥 성장주 로테이션 대상). KOSDAQ 소형주 고변동성이나 정량 베타 미확보→크기 보수적"}
+  }
+}

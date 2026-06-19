@@ -1,0 +1,18 @@
+[
+  {
+    "company": "삼성전자",
+    "news": "반도체 업황 회복 기대",
+    "disclosures": "최근 사업보고서 제출",
+    "market_data": "최근 1개월 주가 상승",
+    "macro": "금리 인하 기대",
+    "expected_keywords": ["반도체", "리스크", "관찰 포인트"]
+  },
+  {
+    "company": "현대차",
+    "news": "북미 판매 호조",
+    "disclosures": "특이 공시 없음",
+    "market_data": "주가 박스권",
+    "macro": "환율 상승",
+    "expected_keywords": ["자동차", "환율", "리스크"]
+  }
+]

@@ -1,0 +1,12 @@
+beautifulsoup4
+fastapi
+langchain
+langchain-openai
+langgraph
+lxml
+meilisearch
+pydantic
+python-dotenv
+requests
+uvicorn
+yfinance

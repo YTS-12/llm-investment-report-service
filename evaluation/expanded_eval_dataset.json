@@ -1,0 +1,20 @@
+[
+  {
+    "company": "삼성전자",
+    "news": "반도체 업황 회복 기대와 외국인 순매수 증가",
+    "disclosures": "최근 사업보고서 제출",
+    "market_data": "최근 1개월 주가 상승, 거래량 증가",
+    "macro": "금리 인하 기대와 수출 회복 기대가 공존",
+    "expected_sections": ["기업 개요", "리스크", "종합 판단", "관찰 포인트"],
+    "expected_keywords": ["반도체", "외국인", "리스크"]
+  },
+  {
+    "company": "현대차",
+    "news": "북미 판매 호조와 전기차 전략 조정",
+    "disclosures": "특이 공시 없음",
+    "market_data": "주가 박스권",
+    "macro": "환율 상승 압력, 소비 경기 둔화 우려",
+    "expected_sections": ["기업 개요", "리스크", "종합 판단", "관찰 포인트"],
+    "expected_keywords": ["자동차", "환율", "북미"]
+  }
+]

@@ -1,0 +1,16 @@
+[
+  {
+    "company": "삼성전자",
+    "news": "반도체 업황 회복 기대",
+    "disclosures": "최근 사업보고서 제출",
+    "market_data": "최근 1개월 주가 상승",
+    "macro": "금리 인하 기대"
+  },
+  {
+    "company": "SK하이닉스",
+    "news": "HBM 수요 확대",
+    "disclosures": "특이 부정 공시 없음",
+    "market_data": "최근 주가 상승세 지속",
+    "macro": "AI 투자 확대 기대"
+  }
+]

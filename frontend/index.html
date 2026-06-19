@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>국내 투자 보고서 생성 서비스</title>
+  <link rel="stylesheet" href="/static/styles.css" />
+</head>
+<body>
+  <div class="container">
+    <header class="page-header">
+      <div>
+        <h1>국내 투자 보고서 생성 서비스</h1>
+        <p class="page-subtitle">자동 보고서 생성, 비교 보고서, 후속 질문을 한 화면에서 자연스럽게 이어서 사용할 수 있습니다.</p>
+      </div>
+    </header>
+
+    <div id="configBanner" class="form-card hidden"></div>
+
+    <section class="action-layout">
+      <div class="form-card action-card">
+        <h2>자동 보고서 생성</h2>
+        <label for="company">회사명</label>
+        <input id="company" type="text" placeholder="예: 삼성전자" />
+
+        <label for="sector">업종</label>
+        <input id="sector" type="text" value="반도체" />
+
+        <label for="news">추가 뉴스 메모 (선택)</label>
+        <textarea id="news" rows="3" placeholder="자동 수집 결과에 추가로 반영할 내용을 적어주세요."></textarea>
+
+        <label for="disclosures">추가 공시 메모 (선택)</label>
+        <textarea id="disclosures" rows="3" placeholder="자동 수집 결과에 추가로 반영할 내용을 적어주세요."></textarea>
+
+        <label for="market_data">추가 시장 데이터 메모 (선택)</label>
+        <textarea id="market_data" rows="3" placeholder="자동 수집 결과에 추가로 반영할 내용을 적어주세요."></textarea>
+
+        <label for="macro">추가 거시 메모 (선택)</label>
+        <textarea id="macro" rows="3" placeholder="자동 수집 결과에 추가로 반영할 내용을 적어주세요."></textarea>
+
+        <button id="submitBtn">자동 보고서 생성</button>
+      </div>
+
+      <div class="form-card action-card">
+        <h2>비교 보고서</h2>
+        <label for="companyA">회사 A</label>
+        <input id="companyA" type="text" placeholder="예: 삼성전자" />
+
+        <label for="sectorA">업종 A</label>
+        <input id="sectorA" type="text" value="반도체" />
+
+        <label for="companyB">회사 B</label>
+        <input id="companyB" type="text" placeholder="예: SK하이닉스" />
+
+        <label for="sectorB">업종 B</label>
+        <input id="sectorB" type="text" value="반도체" />
+
+        <button id="compareBtn">비교 보고서 생성</button>
+      </div>
+    </section>
+
+    <section class="utility-layout">
+      <div class="history-card utility-card">
+        <h2>저장된 보고서</h2>
+        <label for="reportSearchCompany">검색할 회사명</label>
+        <div class="inline-input-row">
+          <input id="reportSearchCompany" type="text" placeholder="예: 삼성전자" />
+          <button id="searchReportsBtn">검색</button>
+        </div>
+        <div id="reportSearchList">아직 없음</div>
+      </div>
+
+      <div class="history-card utility-card utility-card--compact">
+        <h2>세션 활동 로그</h2>
+        <div id="historyList">아직 없음</div>
+      </div>
+    </section>
+
+    <section class="result-layout">
+      <section class="result-card report-result-panel">
+        <div class="panel-header">
+          <div>
+            <h2>보고서 결과</h2>
+            <p class="panel-subtitle">마지막 생성 보고서 또는 비교 보고서가 이 영역에 유지됩니다.</p>
+          </div>
+          <div id="loading" class="panel-loading hidden">생성 중...</div>
+        </div>
+
+        <div id="metaInfo" class="panel-meta"></div>
+        <div id="structuredPanel" class="structured-panel hidden"></div>
+        <div id="result" class="report-body">아직 생성된 보고서가 없습니다.</div>
+      </section>
+
+      <aside class="result-card chat-panel">
+        <div class="panel-header">
+          <div>
+            <h2>후속 질문 채팅</h2>
+            <p class="panel-subtitle">현재 보고서를 읽다가 바로 이어서 질문할 수 있습니다.</p>
+          </div>
+          <div id="chatLoading" class="panel-loading hidden">답변 생성 중...</div>
+        </div>
+
+        <div id="chatReference" class="chat-reference">
+          <strong>현재 참조 보고서</strong>
+          <span>아직 생성된 보고서가 없습니다.</span>
+        </div>
+
+        <div class="chat-target-row">
+          <label for="followupCompany">질문 대상 회사</label>
+          <input id="followupCompany" type="text" placeholder="예: 삼성전자" />
+        </div>
+
+        <div id="chatMessages" class="chat-messages">
+          <div class="chat-empty">후속 질문을 시작하면 여기에 대화가 쌓입니다.</div>
+        </div>
+
+        <div class="chat-input-row">
+          <textarea id="chatQuestionInput" rows="4" placeholder="보고서를 읽다가 궁금한 점을 이어서 질문해보세요."></textarea>
+          <button id="chatSendBtn">질문 전송</button>
+        </div>
+      </aside>
+    </section>
+  </div>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>

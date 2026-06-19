@@ -1,0 +1,116 @@
+﻿# ---------------------------------------------------------------------------
+# Secrets and local configuration
+# ---------------------------------------------------------------------------
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.crt
+*.p12
+*.pfx
+secrets/
+secret/
+credentials/
+credentials.*
+
+# ---------------------------------------------------------------------------
+# Python virtual environments and local interpreters
+# ---------------------------------------------------------------------------
+.venv/
+venv/
+env/
+ENV/
+.langchain_rag_env/
+langchain_rag_env/
+conda-meta/
+
+# ---------------------------------------------------------------------------
+# Python cache, test, lint, and build artifacts
+# ---------------------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.nox/
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# ---------------------------------------------------------------------------
+# Runtime logs and generated local state
+# ---------------------------------------------------------------------------
+*.log
+*.pid
+app.log
+uvicorn*.log
+uvicorn*.pid
+memory_store.json
+report_store.json
+.langchain.db
+*.sqlite
+*.sqlite3
+*.db
+
+# ---------------------------------------------------------------------------
+# Meilisearch local server/data artifacts
+# ---------------------------------------------------------------------------
+data.ms/
+dumps/
+snapshots/
+meilisearch-windows-amd64.exe
+meilisearch.exe
+*.mdb
+
+# ---------------------------------------------------------------------------
+# Notebook and exploratory artifacts
+# ---------------------------------------------------------------------------
+.ipynb_checkpoints/
+archive/legacy_unused/
+
+# ---------------------------------------------------------------------------
+# Frontend dependency/build artifacts, if added later
+# ---------------------------------------------------------------------------
+node_modules/
+.npm/
+.yarn/
+.pnpm-store/
+coverage/
+.next/
+out/
+
+# ---------------------------------------------------------------------------
+# OS and editor local files
+# ---------------------------------------------------------------------------
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# ---------------------------------------------------------------------------
+# Local debug/extraction dumps
+# ---------------------------------------------------------------------------
+_extract_*.txt
+
+# ---------------------------------------------------------------------------
+# Temporary files, backups, and local exports
+# ---------------------------------------------------------------------------
+*.tmp
+*.temp
+*.bak
+*.backup
+*.orig
+*.zip
+*.tar
+*.tar.gz
+*.7z
